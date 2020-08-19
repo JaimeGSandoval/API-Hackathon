@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hotels-styles.css">
   <title>Document</title>
 </head>
 
 <body>
-
   <div class="modal-overlay hidden">
     <i class="fas fa-times mobile-menu-close"></i>
     <div class="mobile-menu-content">
@@ -30,31 +30,41 @@
   <div class="hero-img-container">
 
     <i class="fas fa-bars mobile-menu-icon"></i>
-    <p class='hero-img-text'>Next Holiday</p>
+    <p class='hero-img-text mt-5'>Hotels for Your Holiday</p>
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-11 description-text mt-5">
-        <p>There's always a holiday just around the corner...</p>
-        <p class="mt-4">Enter your Country and find out your next holiday so you can plan a getaway!</p>
-      </div>
-    </div>
 
     <div class="row description-input col-12 mt-5">
       <form action="#">
-        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg" aria-label="country-input"
-          type="text" placeholder="Enter your Country Name">
-        <button class="btn-primary description-submit mt-5 py-2 rounded-lg" type="submit">Give Me a Holiday!</button>
+        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg mb-4"
+          aria-label="country-input" type="text" placeholder="Enter a City">
+        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg mb-4"
+          aria-label="country-input" type="text" placeholder="Enter a Country">
+        <button class="btn-primary description-submit py-2 rounded-lg mb-4" type="submit">Get Hotels!</button>
       </form>
     </div>
 
+    <div class="row">
+      <div class="col-11 description-text">
+        <p class="mt-4">Destination: <span>New York, NY</span></p>
+        <a href="#">New York Marriott Marquis</a>
+        <a href="#">New York Hilton Midtown</a>
+        <a href="#">New York LaGuardia Airport Marriott</a>
+        <!-- <ul>
+          <li><a href="#">New York Marriott Marquis</a></li>
+          <li><a href="#">New York Hilton Midtown</a></li>
+          <li><a href="#">New York LaGuardia Airport Marriott</a></li>
+        </ul> -->
+      </div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous"></script>
   <script src='main.js'></script>
+
 </body>
 
 </html>
