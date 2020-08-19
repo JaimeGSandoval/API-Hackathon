@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/holiday-styles.css">
   <title>Document</title>
 </head>
 
 <body>
-
   <div class="modal-overlay hidden">
     <i class="fas fa-times mobile-menu-close"></i>
     <div class="mobile-menu-content">
@@ -30,22 +30,26 @@
   <div class="hero-img-container">
 
     <i class="fas fa-bars mobile-menu-icon"></i>
-    <p class='hero-img-text'>Next Holiday</p>
+    <p class='hero-img-text mt-5'>September 7th</p>
+    <p class='hero-img-text'>Labor Day!</p>
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-11 description-text mt-5">
-        <p>There's always a holiday just around the corner...</p>
-        <p class="mt-4">Select your Country and find out your next holiday so you can plan a getaway!</p>
+      <div class="col-11 description-text">
+        <p>The next holiday in your country is <span>September 7th</span>, <span>Labor Day!</span></p>
+        <p>You have a holiday, now make use of it! Enter a destination you'd like visit below and get
+          listings of Hotels i your area of choice.</p>
       </div>
     </div>
 
-    <div class="row description-input col-12 mt-5">
+    <div class="row description-input col-12">
       <form action="#">
-        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg" aria-label="country-input"
-          type="text" placeholder="Enter your Country Name">
-        <button class="btn-primary description-submit mt-5 py-2 rounded-lg" type="submit">Give Me a Holiday!</button>
+        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg mb-3"
+          aria-label="country-input" type="text" placeholder="Enter a City">
+        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg mb-3"
+          aria-label="country-input" type="text" placeholder="Enter a Country">
+        <button class="btn-primary description-submit py-2 rounded-lg" type="submit">Give Me a Holiday!</button>
       </form>
     </div>
 
@@ -53,6 +57,7 @@
 
 
   <script src='main.js'></script>
+
 </body>
 
 </html>
