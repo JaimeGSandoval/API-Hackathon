@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="modal-overlay hidden">
+    <i class="fas fa-times mobile-menu-close"></i>
+    <div class="mobile-menu-content">
+      <a href="#">HOME</a>
+      <a href="#">HOLIDAY INFO</a>
+      <a href="#">SEARCH HOTELS</a>
+    </div>
+
+  </div>
+
+  <div class="hero-img-container">
+
+    <i class="fas fa-bars mobile-menu-icon"></i>
+    <p class='hero-img-text'>Next Holiday</p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-11 home-page-text mt-5">
+        <p>There's always a holiday just around the corner...</p>
+        <p class="mt-4">Select your Country and find out your next holiday so you can plan a getaway!</p>
+      </div>
+    </div>
+
+    <div class="row home-page-input col-12 mt-5">
+      <form action="#">
+        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg" aria-label="country-input"
+          type="text" placeholder="Enter your Country Name">
+        <button class="btn-primary home-page-submit mt-5 py-2 rounded-lg" type="submit">Give Me a Holiday!</button>
+      </form>
+    </div>
+
+  </div>
+
+
+  <script src='main.js'></script>
+</body>
+
+</html>
