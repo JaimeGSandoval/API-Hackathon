@@ -2,13 +2,24 @@
   box-sizing: border-box;
 }
 
+/* @font-face {
+  font-family: "Quicksand";
+  src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+  font-display: swap;
+} */
+
+/* @font-face {
+  src: 'url("../fonts/lobster-regular-webfont.woff") format=woff';
+  font-family: "Lobster", cursive;
+  font-display: swap;
+} */
+
 html {
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  font-family: "Quicksand", sans-serif;
 }
 
 .hero-img-container {
@@ -25,11 +36,12 @@ body {
 }
 
 .hero-img-text {
+  /* font-family: "Lobster", cursive; */
   font-size: 4.5rem;
   letter-spacing: 4px;
   color: #fff;
-  text-shadow: 2px 3px #000;
-  font-family: "Lobster", cursive;
+  text-shadow: 2px 3px #444;
+  /* font-family: "Quicksand"; */
 }
 
 .mobile-menu-icon {
@@ -38,11 +50,11 @@ body {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  text-shadow: 2px 3px #000;
+  text-shadow: 2px 3px #444;
 }
 
 .mobile-menu-close {
-  color: skyblue;
+  color: #444;
   font-size: 3rem;
   position: absolute;
   top: 2rem;
@@ -70,7 +82,7 @@ body {
 }
 
 .mobile-menu-content a {
-  color: skyblue;
+  color: #444;
   font-size: 3rem;
   text-decoration: none;
   font-weight: bold;
@@ -78,7 +90,7 @@ body {
 }
 
 .description-text {
-  color: #000;
+  color: #222;
   font-size: 2.2rem;
   margin: auto;
 }
