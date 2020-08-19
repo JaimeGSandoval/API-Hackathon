@@ -257,17 +257,26 @@ let isoCountries = [
 // given CountryName
 function getCountryCode(countryName) {
 
+  let noSpacesCountryName = '';
+
   for (var prop in isoCountries) {
+
     if (isoCountries[prop]['cname'] === countryName.toLowerCase()) {
-      console.log(isoCountries[prop]['ccode']);
       return isoCountries[prop]['ccode'];
     }
+  }
+  for (let i = 0; i < countryName.length; i++) {
+    if (noSpacesCountryName[i] === ' ') {
+      countryName[i] = '%20';
+    }
+    noSpacesCountryName += countryName[i];
 
   }
 }
 
-function getHoliday(countryName) {
-  let countryCode = getCountryCode(countryName);
+function getHoliday(countryStr) {
+  let countryCode = getCountryCode(countryStr);
+  console.log(countryCode)
 
 
   $.ajax({
@@ -277,19 +286,22 @@ function getHoliday(countryName) {
     success: handleGetHolidaySuccess,
     error: handleGetHolidayError
   })
+  // .done(function () {
+  //   window.location.href = 'holiday.html' // redirects the page when finished.
+  // });
 }
 
 
 
 // change the page to the holiday page and and append response text to page
 function handleGetHolidaySuccess(response) {
-  let arr = [];
+  let holidayArr = [];
   for (let i = 0; i < response.holidays.length; i++) {
     if (response.holidays[i].public) {
-      arr.push(response.holidays[i]);
+      holidayArr.push(response.holidays[i].name);
     }
   }
-  console.log(arr);
+  console.log(holidayArr);
 
 }
 
