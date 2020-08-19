@@ -1,0 +1,19 @@
+.hero-img-container {
+  background-image: url("../images/holiday-hero-sm.jpg");
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+.hero-img-text {
+  margin-top: -2rem;
+}
+
+.description-input {
+  justify-content: center;
+  margin: auto;
+}
+
+.description-text {
+  margin-top: -1rem;
+}
