@@ -3,6 +3,9 @@
   text-align: center;
 }
 
+.hero-img-text {
+  letter-spacing: 2px;
+}
 .description-text {
   text-align: center;
 }
