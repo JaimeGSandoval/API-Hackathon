@@ -21,7 +21,6 @@
     <i class="fas fa-times mobile-menu-close"></i>
     <div class="mobile-menu-content">
       <a href="index.html">HOME</a>
-      <a href="holiday.html">HOLIDAY INFO</a>
       <a href="hotels.html">SEARCH HOTELS</a>
     </div>
 
@@ -35,30 +34,27 @@
   </div>
 
   <div class="container">
-
-    <div class="row description-input col-12 mt-5">
-      <form action="#">
-
-        <!-- Hotel page city input -->
-        <input id="hotel-pg-city-input" name="hotel-pg-city-input" class="form-control py-4 rounded-lg mb-4"
-          aria-label="hotel-pg-city-input" type="text" placeholder="Enter a City">
-
-        <!-- Hotel page country input  -->
-        <input id="hotel-pg-country-input" name="hotel-pg-country-input" class="form-control py-4 rounded-lg mb-4"
-          aria-label="hotel-pg-country-input" type="text" placeholder="Enter a Country">
-
-        <button class="btn-primary description-submit py-2 rounded-lg mb-4" type="submit">Get Hotels!</button>
-      </form>
+    <div class="col-11 mt-5">
+      <p class="hotels-instructions text-center">Enter a City or Country that you'd like to visit and we'll list high
+        quality hotels
+        in that location.</p>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-11 description-text">
-        <p class="mt-4">Destination: <span>New York, NY</span></p>
-        <a href="#">New York Marriott Marquis</a>
-        <a href="#">New York Hilton Midtown</a>
-        <a href="#">New York LaGuardia Airport Marriott</a>
-      </div>
-    </div>
+  <div class="row description-input col-12 mt-5">
+    <form action="#" class="holiday-form">
+
+      <!-- Hotel page city input -->
+      <input id="hotel-pg-city-input" name="hotel-pg-city-input" class="form-control py-4 rounded-lg"
+        aria-label="hotel-pg-city-input" type="text" placeholder="Enter a City or Country">
+      <button class="btn-primary description-submit py-2 rounded-lg my-5" type="submit">Get Hotels!</button>
+    </form>
+  </div>
+
+  <div class="row">
+    <p id="city-destination" class="mt-4 mb-3 user-hotel-city"></p>
+    <div class="col-11 description-text mb-5"></div>
+  </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"

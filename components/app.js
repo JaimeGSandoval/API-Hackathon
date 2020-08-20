@@ -365,19 +365,6 @@ form.addEventListener('submit', function (e) {
   getHoliday(countryInput.value);
   countryInput.value = '';
 });
+
 mobileClose.addEventListener('click', hiddenClass);
 mobileMenuIcon.addEventListener('click', hiddenClass);
-
-
-
-
-// Try this to change the page on form submit
-  // var fromData = $(#formID).serialize(); // your form's data
-  // $.ajax({
-  //   type: "POST",
-  //   url: "newpage.php",
-  //   data: fromData //sends the data to the new page.
-  // })
-  //   .done(function (msg) {
-  //     window.location.href = 'index.php' // redirects the page when finished.
-  //   });

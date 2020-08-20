@@ -250,21 +250,32 @@ let isoCountries = [
   { 'ccode': 'ZW', 'cname': 'zimbabwe' }
 ];
 
+let destinationText = document.querySelector('.user-hotel-city');
+const hotelCityInput = document.getElementById('hotel-pg-city-input');
 const mobileClose = document.querySelector('.mobile-menu-close');
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
 const modalOverlay = document.querySelector('.modal-overlay');
 mobileClose.addEventListener('click', hiddenClass);
-mobileMenuIcon.addEventListener('click', hiddenClass)
-function hiddenClass() {
-  if (modalOverlay.classList.contains('hidden')) {
-    modalOverlay.classList.remove('hidden');
-  } else {
-    modalOverlay.classList.add('hidden');
-  }
-}
+mobileMenuIcon.addEventListener('click', hiddenClass);
+const hotelForm = document.querySelector('.holiday-form');
+const hotelsContainer = document.querySelector('.description-text');
+
 
 // Ajax call *********************
-function getTravelDeals() {
+function getTravelDeals(cityName) {
+  hotelsContainer.innerHTML = '';
+  destinationText.textContent = '';
+  destinationText.textContent = cityName;
+  destinationText.classList.add('upperCase');
+  let city = '';
+  for (let i = 0; i < cityName.length; i++) {
+    if (cityName[i] === ' ') {
+      cityName[i] = '%20';
+    }
+    city += cityName[i];
+  }
+
+
   $.ajax({
     headers: {
       "x-rapidapi-host": "hotels4.p.rapidapi.com",
@@ -273,8 +284,8 @@ function getTravelDeals() {
 
     async: true,
     crossDomain: true,
-    url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=las%20vegas",
-    // url: "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040",
+    url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=" + city + "",
+
     success: handleGetTravelDealsSuccess,
     error: handleTravelDealsError
   })
@@ -282,37 +293,38 @@ function getTravelDeals() {
 
 
 function handleGetTravelDealsSuccess(response) {
-  // console.log(response);
-  let hotelArray = [];
-  for (let i = 0; i < response.suggestions.length; i++) {
-    if (!response.suggestions[i].entities[i].name) {
-      return;
-    }
-    console.log(response.suggestions[i].entities[i].name)
+  for (let i = 0; i < response.suggestions.length - 1; i++) {
+    console.log(response.suggestions[3].entities[i].name);
+    let hotelListingText = document.createElement('a');
+    hotelListingText.textContent = response.suggestions[3].entities[i].name;
+    hotelListingText.classList.add('hotel-listing');
+    hotelsContainer.appendChild(hotelListingText);
   }
-  // console.log(response.suggestions[3].entities[0]);
 
 }
 
 function handleTravelDealsError(error) {
   console.log(error);
 }
-// ************************************
 
-// Returns the ISO Country Code for the given CountryName
-function getCountryCode(countryName) {
-  let noSpacesCountryName = '';
 
-  for (var prop in isoCountries) {
-    if (isoCountries[prop]['cname'] === countryName.toLowerCase()) {
-      return isoCountries[prop]['ccode'];
-    }
-  }
-
-  for (let i = 0; i < countryName.length; i++) {
-    if (noSpacesCountryName[i] === ' ') {
-      countryName[i] = '%20';
-    }
-    noSpacesCountryName += countryName[i];
+function hiddenClass() {
+  if (modalOverlay.classList.contains('hidden')) {
+    modalOverlay.classList.remove('hidden');
+  } else {
+    modalOverlay.classList.add('hidden');
   }
 }
+
+
+hotelForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+})
+
+hotelForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  console.log(hotelCityInput.value)
+  getTravelDeals(hotelCityInput.value)
+  hotelCityInput.value = '';
+});
