@@ -277,7 +277,6 @@ function getHoliday(countryStr) {
 }
 
 
-
 // change the page to the holiday page and and append response text to page
 function handleGetHolidaySuccess(response) {
   let holidayArr = [];
@@ -303,34 +302,6 @@ function handleGetHolidaySuccess(response) {
 function handleGetHolidayError(error) {
   console.log(error);
 }
-// ************************************
-
-// // Ajax call *********************
-// function getTravelDeals() {
-//   $.ajax({
-//     headers: {
-//       "x-rapidapi-host": "hotels4.p.rapidapi.com",
-//       "x-rapidapi-key": "6bb1f7d518mshee6c717c3746b3ap119550jsned3e9335e862"
-//     },
-
-//     async: true,
-//     crossDomain: true,
-//     url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20york",
-//     // url: "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040",
-//     success: handleGetTravelDealsSuccess,
-//     error: handleTravelDealsError
-//   })
-// }
-
-
-// function handleGetTravelDealsSuccess(response) {
-//   console.log(response);
-// }
-
-// function handleTravelDealsError(error) {
-//   console.log(error);
-// }
-// // ************************************
 
 // // Returns the ISO Country Code for the given CountryName
 function getCountryCode(countryName) {
