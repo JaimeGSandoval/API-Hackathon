@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/holiday-styles.css">
   <title>Document</title>
+
+
 </head>
 
 <body>
@@ -30,8 +32,7 @@
   <div class="hero-img-container">
 
     <i class="fas fa-bars mobile-menu-icon"></i>
-    <p class='hero-img-text mt-5 next-holiday-date'>September 7th</p>
-    <p class='hero-img-text next-holiday'>Labor Day!</p>
+    <p class='hero-img-text next-holiday' id="next-holiday-date"></p>
     <div class="overlay"></div>
   </div>
 
@@ -46,13 +47,20 @@
 
     <div class="row description-input col-12">
       <form action="#">
-        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg mt-2 mb-4"
-          aria-label="country-input" type="text" placeholder="Enter a City">
-        <input id=" country-input" name="country-input" class="form-control py-4 rounded-lg mb-4"
+
+
+        <!-- Holiday page city input -->
+        <input id="holiday-pg-city-input" name="city-input" class="form-control py-4 rounded-lg mt-2 mb-4"
+          aria-label="city-input" type="text" placeholder="Enter a City">
+
+        <!-- Holiday page country input -->
+        <input id="holiday-pg-country-input" name="country-input" class="form-control py-4 rounded-lg mb-4"
           aria-label="country-input" type="text" placeholder="Enter a Country">
-        <!-- <button class="btn-primary description-submit py-2 rounded-lg" type="submit">Get Hotels!</button> -->
-        <a href="hotels.html" class="text-center btn-primary description-submit py-2 rounded-lg" type="submit">Get
-          Hotels!</a>
+
+        <button class="btn-primary holiday-btn-submit rounded-lg" type="submit">Get Hotels!</button>
+        <!-- <a href="#" class="holiday-btn-submit text-center btn-primary description-submit py-2 rounded-lg"
+          type="submit">Get
+          Hotels!</a> -->
 
       </form>
     </div>
@@ -61,8 +69,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous"></script>
-
-  <script src='main.js'></script>
+  <script src='holiday.js'></script>
 
 </body>
 
