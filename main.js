@@ -1,4 +1,3 @@
-
 // holdidayapi api key 9c40cd28-12d7-45c8-aecc-00c4d2a5e54c
 //https://holidayapi.com/v1/holidays?pretty&key=9c40cd28-12d7-45c8-aecc-00c4d2a5e54c&country=US&year=2019
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");

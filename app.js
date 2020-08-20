@@ -1,6 +1,6 @@
 // If not on holiday page in browser, it's null, otherwise it console logs
-const nextHolidayName = document.getElementById('next-holiday-date');
-console.log(nextHolidayName);
+// const nextHolidayName = document.getElementById('next-holiday-date');
+// console.log(nextHolidayName);
 
 // if not on home page in browser, it's null, otherwise it console logs
 const countryInput = document.getElementById('home-pg-country-input');
