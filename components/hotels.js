@@ -281,7 +281,7 @@ function getTravelDeals(cityName) {
       "x-rapidapi-host": "hotels4.p.rapidapi.com",
       "x-rapidapi-key": "6bb1f7d518mshee6c717c3746b3ap119550jsned3e9335e862"
     },
-
+    method: "GET",
     async: true,
     crossDomain: true,
     url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=" + city + "",
