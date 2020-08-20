@@ -5,10 +5,6 @@
   text-align: center;
 }
 
-.hero-img-text {
-  margin-top: -2rem;
-}
-
 .description-input {
   justify-content: center;
   margin: auto;
@@ -22,4 +18,13 @@
   width: 100%;
   font-size: 2rem;
   height: 4rem;
+}
+
+.hero-img-container {
+  height: 35vh;
+}
+
+.next-holiday {
+  letter-spacing: 2px;
+  line-height: 6rem;
 }

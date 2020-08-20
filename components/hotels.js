@@ -284,7 +284,13 @@ function getTravelDeals(cityName) {
     method: "GET",
     async: true,
     crossDomain: true,
-    url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=" + city + "",
+    // locations/search
+    // url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=" + city + "",
+    //properties/list
+    // url: "https://hotels4.p.rapidapi.com/properties/list?currency=USD&locale=en_US&sortOrder=PRICE&destinationId=1506246&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1",
+    // properties/get-details
+    // url: "https://hotels4.p.rapidapi.com/properties/get-details?locale=en_US&currency=USD&checkOut=2020-01-15&adults1=1&checkIn=2020-01-08&id=424023",
+
 
     success: handleGetTravelDealsSuccess,
     error: handleTravelDealsError
@@ -293,6 +299,7 @@ function getTravelDeals(cityName) {
 
 
 function handleGetTravelDealsSuccess(response) {
+  console.log(response);
   for (let i = 0; i < response.suggestions.length - 1; i++) {
     console.log(response.suggestions[3].entities[i].name);
     let hotelListingText = document.createElement('a');
