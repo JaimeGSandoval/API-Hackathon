@@ -1,6 +1,13 @@
+// If not on holiday page in browser, it's null, otherwise it console logs
+const nextHolidayName = document.getElementById('next-holiday-date');
+console.log(nextHolidayName);
 
-const countryInput = document.getElementById('country-input');
+// if not on home page in browser, it's null, otherwise it console logs
+const countryInput = document.getElementById('home-pg-country-input');
+console.log(countryInput)
+
 const form = document.querySelector('form');
+
 let isoCountries = [
   { 'ccode': 'AF', 'cname': 'afghanistan' },
   { 'ccode': 'AX', 'cname': 'aland islands' },
@@ -256,28 +263,25 @@ let isoCountries = [
 //Returns the ISO Country Code for the
 // given CountryName
 function getCountryCode(countryName) {
-
   let noSpacesCountryName = '';
 
   for (var prop in isoCountries) {
-
     if (isoCountries[prop]['cname'] === countryName.toLowerCase()) {
       return isoCountries[prop]['ccode'];
     }
   }
+
   for (let i = 0; i < countryName.length; i++) {
     if (noSpacesCountryName[i] === ' ') {
       countryName[i] = '%20';
     }
     noSpacesCountryName += countryName[i];
-
   }
 }
 
+
 function getHoliday(countryStr) {
   let countryCode = getCountryCode(countryStr);
-  console.log(countryCode)
-
 
   $.ajax({
     // url: "https://holidayapi.com/v1/holidays?pretty&key=9c40cd28-12d7-45c8-aecc-00c4d2a5e54c&country=JP&year=2019",
@@ -296,13 +300,23 @@ function getHoliday(countryStr) {
 // change the page to the holiday page and and append response text to page
 function handleGetHolidaySuccess(response) {
   let holidayArr = [];
+  let currentDate = new Date();
+  currentDate.setFullYear(2019);
+
+
   for (let i = 0; i < response.holidays.length; i++) {
     if (response.holidays[i].public) {
-      holidayArr.push(response.holidays[i].name);
+      let holidayDate = new Date(response.holidays[i].date)
+      if (currentDate < holidayDate) {
+        console.log(response.holidays[i].name)
+        holidayArr.push(response.holidays[i])
+        // nextHolidayName.textContent = response.holidays[i].name;
+      }
     }
-  }
-  console.log(holidayArr);
 
+  }
+  console.log(holidayArr[0].name)
+  // nextHolidayName.textContent = holidayArr[0].name
 }
 
 
@@ -323,8 +337,6 @@ function getTravelDeals() {
     crossDomain: true,
     url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20york",
     // url: "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040",
-
-
     success: handleGetTravelDealsSuccess,
     error: handleTravelDealsError
   })
@@ -346,7 +358,6 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   getHoliday(countryInput.value);
 });
-
 
 
 
