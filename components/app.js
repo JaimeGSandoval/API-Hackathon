@@ -252,7 +252,6 @@ let isoCountries = [
 
 
 let nextHolidayName = document.querySelector('.hero-img-text');
-console.log(nextHolidayName)
 const countryInput = document.getElementById('home-pg-country-input');
 const form = document.querySelector('.home-pg-form');
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
@@ -293,7 +292,6 @@ function handleGetHolidaySuccess(response) {
 
   }
   nextHolidayName.textContent = holidayArr[0].name;
-  console.log(holidayArr[0]['name'])
 }
 
 

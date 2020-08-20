@@ -293,9 +293,7 @@ function getTravelDeals(cityName) {
 
 
 function handleGetTravelDealsSuccess(response) {
-  console.log(response);
   for (let i = 0; i < response.suggestions.length - 1; i++) {
-    console.log(response.suggestions[3].entities[i].name);
     let hotelListingText = document.createElement('a');
     hotelListingText.textContent = response.suggestions[3].entities[i].name;
     hotelListingText.classList.add('hotel-listing');
@@ -325,7 +323,6 @@ hotelForm.addEventListener('submit', function (e) {
 
 hotelForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  console.log(hotelCityInput.value)
   getTravelDeals(hotelCityInput.value)
   hotelCityInput.value = '';
 });
