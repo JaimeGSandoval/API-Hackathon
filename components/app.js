@@ -271,9 +271,7 @@ function getHoliday(countryStr) {
     success: handleGetHolidaySuccess,
     error: handleGetHolidayError
   })
-  // .done(function () {
-  //   window.location.href = 'holiday.html' // redirects the page when finished.
-  // });
+
 }
 
 
