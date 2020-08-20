@@ -1,13 +1,3 @@
-// If not on holiday page in browser, it's null, otherwise it console logs
-// const nextHolidayName = document.getElementById('next-holiday-date');
-// console.log(nextHolidayName);
-
-// if not on home page in browser, it's null, otherwise it console logs
-const countryInput = document.getElementById('home-pg-country-input');
-console.log(countryInput)
-
-const form = document.querySelector('form');
-
 let isoCountries = [
   { 'ccode': 'AF', 'cname': 'afghanistan' },
   { 'ccode': 'AX', 'cname': 'aland islands' },
@@ -260,31 +250,22 @@ let isoCountries = [
   { 'ccode': 'ZW', 'cname': 'zimbabwe' }
 ];
 
-//Returns the ISO Country Code for the
-// given CountryName
-function getCountryCode(countryName) {
-  let noSpacesCountryName = '';
 
-  for (var prop in isoCountries) {
-    if (isoCountries[prop]['cname'] === countryName.toLowerCase()) {
-      return isoCountries[prop]['ccode'];
-    }
-  }
-
-  for (let i = 0; i < countryName.length; i++) {
-    if (noSpacesCountryName[i] === ' ') {
-      countryName[i] = '%20';
-    }
-    noSpacesCountryName += countryName[i];
-  }
-}
+let nextHolidayName = document.querySelector('.hero-img-text');
+console.log(nextHolidayName)
+const countryInput = document.getElementById('home-pg-country-input');
+const form = document.querySelector('.home-pg-form');
+const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+const modalOverlay = document.querySelector('.modal-overlay');
+const mobileClose = document.querySelector('.mobile-menu-close');
 
 
+
+// Ajax call *************************************
 function getHoliday(countryStr) {
   let countryCode = getCountryCode(countryStr);
 
   $.ajax({
-    // url: "https://holidayapi.com/v1/holidays?pretty&key=9c40cd28-12d7-45c8-aecc-00c4d2a5e54c&country=JP&year=2019",
     url: "https://holidayapi.com/v1/holidays?pretty&key=9c40cd28-12d7-45c8-aecc-00c4d2a5e54c&country=" + countryCode + "&year=2019",
     method: "GET",
     success: handleGetHolidaySuccess,
@@ -309,66 +290,81 @@ function handleGetHolidaySuccess(response) {
       let holidayDate = new Date(response.holidays[i].date)
       if (currentDate < holidayDate) {
         console.log(response.holidays[i].name)
-        holidayArr.push(response.holidays[i])
-        // nextHolidayName.textContent = response.holidays[i].name;
+        holidayArr.push(response.holidays[i]);
       }
     }
 
   }
-  console.log(holidayArr[0].name)
-  // nextHolidayName.textContent = holidayArr[0].name
+  nextHolidayName.textContent = holidayArr[0].name;
+  console.log(holidayArr[0]['name'])
 }
 
 
 function handleGetHolidayError(error) {
   console.log(error);
 }
+// ************************************
+
+// // Ajax call *********************
+// function getTravelDeals() {
+//   $.ajax({
+//     headers: {
+//       "x-rapidapi-host": "hotels4.p.rapidapi.com",
+//       "x-rapidapi-key": "6bb1f7d518mshee6c717c3746b3ap119550jsned3e9335e862"
+//     },
+
+//     async: true,
+//     crossDomain: true,
+//     url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20york",
+//     // url: "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040",
+//     success: handleGetTravelDealsSuccess,
+//     error: handleTravelDealsError
+//   })
+// }
 
 
+// function handleGetTravelDealsSuccess(response) {
+//   console.log(response);
+// }
 
-function getTravelDeals() {
-  $.ajax({
-    headers: {
-      "x-rapidapi-host": "hotels4.p.rapidapi.com",
-      "x-rapidapi-key": "6bb1f7d518mshee6c717c3746b3ap119550jsned3e9335e862"
-    },
+// function handleTravelDealsError(error) {
+//   console.log(error);
+// }
+// // ************************************
 
-    async: true,
-    crossDomain: true,
-    url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20york",
-    // url: "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040",
-    success: handleGetTravelDealsSuccess,
-    error: handleTravelDealsError
-  })
+// // Returns the ISO Country Code for the given CountryName
+function getCountryCode(countryName) {
+  let noSpacesCountryName = '';
+
+  for (var prop in isoCountries) {
+    if (isoCountries[prop]['cname'] === countryName.toLowerCase()) {
+      return isoCountries[prop]['ccode'];
+    }
+  }
+
+  for (let i = 0; i < countryName.length; i++) {
+    if (noSpacesCountryName[i] === ' ') {
+      countryName[i] = '%20';
+    }
+    noSpacesCountryName += countryName[i];
+  }
 }
 
 
-
-function handleGetTravelDealsSuccess(response) {
-  console.log(response);
+function hiddenClass() {
+  if (modalOverlay.classList.contains('hidden')) {
+    modalOverlay.classList.remove('hidden');
+  } else {
+    modalOverlay.classList.add('hidden');
+  }
 }
 
-
-
-function handleTravelDealsError(error) {
-  console.log(error);
-}
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   getHoliday(countryInput.value);
+  countryInput.value = '';
 });
 
-
-
-
-// Try this to change the page on form submit
-  // var fromData = $(#formID).serialize(); // your form's data
-  // $.ajax({
-  //   type: "POST",
-  //   url: "newpage.php",
-  //   data: fromData //sends the data to the new page.
-  // })
-  //   .done(function (msg) {
-  //     window.location.href = 'index.php' // redirects the page when finished.
-  //   });
+mobileClose.addEventListener('click', hiddenClass);
+mobileMenuIcon.addEventListener('click', hiddenClass);

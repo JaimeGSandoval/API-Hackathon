@@ -3,18 +3,46 @@
   text-align: center;
 }
 
-.description-text {
-  text-align: center;
+.hero-img-text {
+  letter-spacing: 2px;
 }
+/* .description-text {
+  text-align: center;
+  color: #222;
+  font-size: 2.2rem;
+  margin: auto;
+} */
 
-.description-text p:nth-of-type(1) {
+#city-destination {
   border-bottom: 1px solid #222;
   display: inline-block;
+  text-align: center;
+  font-size: 2.2rem;
+  margin: auto;
 }
 
-.description-text a {
+.hotel-listing {
   display: block;
   color: #222;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+}
+
+.hero-img-container {
+  height: 35vh;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
+
+.description-text {
+  text-align: center;
+  color: #222;
+  font-size: 2.2rem;
+  margin: auto;
+}
+
+.hotels-instructions {
+  font-size: 2.2rem;
 }
