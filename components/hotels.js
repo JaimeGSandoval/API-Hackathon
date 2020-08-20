@@ -285,13 +285,7 @@ function getTravelDeals(cityName) {
     async: true,
     crossDomain: true,
     // locations/search
-    // url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=" + city + "",
-    //properties/list
-    // url: "https://hotels4.p.rapidapi.com/properties/list?currency=USD&locale=en_US&sortOrder=PRICE&destinationId=1506246&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1",
-    // properties/get-details
-    // url: "https://hotels4.p.rapidapi.com/properties/get-details?locale=en_US&currency=USD&checkOut=2020-01-15&adults1=1&checkIn=2020-01-08&id=424023",
-
-
+    url: "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=" + city + "",
     success: handleGetTravelDealsSuccess,
     error: handleTravelDealsError
   })
